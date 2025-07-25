@@ -1,7 +1,9 @@
-Spec.describe Calculator do
+require_relative '../string_calculator'
+
+RSpec.describe Calculator do
   let(:calc) { Calculator.new }
 
-  describe "add" do // writing all the possible test cases related to add method
+  describe "add" do # writing all the possible test cases related to add method
     it " return 0 if no argument passed" do
       expect(calc.add()).to eq(0)
     end
