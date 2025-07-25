@@ -22,6 +22,10 @@ Spec.describe Calculator do
       expect(calc.add(1001)).to eq(0)
     end
 
+    it " return sum if integer value is passed" do
+      expect(calc.add(1*2)).to eq(2)
+    end
+
     it " return ignore number greater than 1000 passed" do
       expect(calc.add('2,3,4,1001')).to eq(9)
     end
