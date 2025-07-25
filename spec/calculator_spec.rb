@@ -1,9 +1,13 @@
-require_relative '../string_calculator'
+require_relative '../calculator'
 
 RSpec.describe Calculator do
   let(:calc) { Calculator.new }
 
   describe "add" do # writing all the possible test cases related to add method
+    it " return 0 if blank string passed" do
+      expect(calc.add('')).to eq(0)
+    end
+
     it " return 0 if no argument passed" do
       expect(calc.add()).to eq(0)
     end
@@ -17,7 +21,7 @@ RSpec.describe Calculator do
     end
 
     it " return exception if negative numbers passed" do
-      expect(calc.add(-1)).to raise_error("negative numbers are not allowed: -1")
+      expect{ calc.add(-1) }.to raise_error("negative numbers are not allowed: -1")
     end
 
     it " return 0 if number is greater than 1000 passed" do
@@ -41,8 +45,7 @@ RSpec.describe Calculator do
     end
 
     it " raise an exception if string with special char and negative number in delimeters" do
-      expect(calc.add('3[[4&&6{{[8\\9;-8;1?8/9*9^3%2')).to raise_error('negative numbers are not allowed: -8')
+      expect{ calc.add('3[[4&&6{{[8\\9;-8;1?8/9*9^3%2') }.to raise_error('negative numbers are not allowed: -8')
     end
-    
   end
 end
