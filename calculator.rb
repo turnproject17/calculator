@@ -4,7 +4,7 @@ class Calculator
   end
 
   def add(numbers)
-    get_sumable_numbers(numbers)
+    get_sumable_numbers(numbers.to_s)
     validate_number
     return @numbers.sum
   end
