@@ -3,7 +3,7 @@ class Calculator
     @numbers = []
   end
 
-  def add(numbers)
+  def add(numbers = nil)
     get_sumable_numbers(numbers.to_s)
     validate_number
     return @numbers.sum
